@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang='pt-BR'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulário Placeholder</title>
+    <link rel="stylesheet" href="resources/css/normalize.css">
+    <link rel="stylesheet" href="resources/css/cap7_placeholder.css">
+    <script src="resources/js/jquery.min.js"></script>
+  </head>
+  <body>
+  
+  <form method='post' action=''>
+	<label for='username'>Usuário</label>
+	<input type='text' id='username' placeholder='Usuário'>
+	<label for='password'>Senha</label>
+	<input type='password' id='password' placeholder='Senha'>
+	<button>Entrar no site</button>
+  </form>
+  
+  <script>
+	  jQuery(function($) {
+		  function supportsPlaceholder() {
+			  return 'placeholder' in document.createElement('input') &&
+			  		 'placeholder' in document.createElement('textarea');
+		  }
+		  if(!supportsPlaceholder()) {
+			  $('html').addClass('no-placeholder');
+		  }
+	  });
+  </script>
+
+  </body>
+</html>

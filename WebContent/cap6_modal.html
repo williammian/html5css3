@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang='pt-BR'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Modal</title>
+    <link rel="stylesheet" href="resources/css/normalize.css">
+    <link rel="stylesheet" href="resources/css/cap6_modal.css">
+    <script src="resources/js/jquery.min.js"></script>
+  </head>
+  <body>
+  
+  <a id='show-modal' href='javascript:;'>Exibir modal</a>
+  
+  <div class='notice'>
+	<h1>Atenção</h1>
+	<p>Aqui você pode exibir alguma mensagem importante, que ela irá
+	sobrepor todo o conteúdo do seu site.
+	</p>
+	<a href='javascript:;' class='close'>Fechar</a>
+  </div>
+  
+  <div class='overlay'></div>
+  
+  <script>
+     $('#show-modal').on('click', function() {
+		$('.overlay, .notice').show();
+	 });
+     
+     $('.overlay, .close').on('click', function() {
+		$('.overlay, .notice').hide();
+     });
+     
+     $(document).keyup(function(e) {
+        if (e.keyCode == 27) { // escape key maps to keycode `27`
+        	$('.overlay, .notice').hide();
+        }
+     });
+  </script>
+
+  </body>
+</html>
